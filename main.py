@@ -15,25 +15,6 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
 
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-
-
-class TokenData(BaseModel):
-    username: Optional[str] = None
-
-
-class User(BaseModel):
-    username: str
-    password: str
-
-
-class UserInDB(User):
-    hashed_password: str
-
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 app = FastAPI()
